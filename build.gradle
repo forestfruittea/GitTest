@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id("application")
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass.set("org.example.Main")
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
